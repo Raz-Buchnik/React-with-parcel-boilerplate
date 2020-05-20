@@ -1,0 +1,26 @@
+{
+  "name": "react-with-parcel-boilerplate",
+  "version": "1.0.0",
+  "description": "Basic and simple",
+  "main": "src/bin/index.js",
+  "scripts": {
+    "start": "rm -rf ./build/www && NODE_ENV=development parcel ./src/bin/index.html --port 8083 --out-dir build/www",
+    "build": "rm -rf ./build/www && NODE_ENV=production parcel build ./src/bin/index.html --out-dir build/www",
+    "build-dev": "rm -rf ./build/www && NODE_ENV=development parcel build ./src/bin/index.html --out-dir build/output",
+    "build-stage": "rm -rf ./build/www && NODE_ENV=staging parcel build ./src/bin/index.html --out-dir build/output"
+  },
+  "keywords": [
+    "React with Parcel Boilerplate"
+  ],
+  "author": "Raz Buchnik",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-easy-state": "^6.1.3",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
