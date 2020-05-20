@@ -1,3 +1,3 @@
-export { default as Page } from './Page'
-export { default as Header } from './Header'
-export { default as Container } from './Container'
+export { default as Page } from '/core/Page'
+export { default as Header } from '/core/Header'
+export { default as Container } from '/core/Container'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { view as View } from 'react-easy-state'
-import { Page, Header, Container } from '../core'
+import { Page, Header, Container } from '/core'
 
 const Handler = () => {
   return (

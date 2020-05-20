@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { view as View } from 'react-easy-state'
-import { Page, Header, Container } from '../core'
-import { user } from '../stores'
+import { Page, Header, Container } from '/core'
+import { user } from '/stores'
 
 const Handler = () => {
   console.log(user.type)
