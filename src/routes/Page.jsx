@@ -1,29 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { view } from 'react-easy-state'
-import GlobalStore from '../app/store'
+import { view as View } from 'react-easy-state'
+import { Page, Header, Container } from '../core'
 
-const Handler = ({
-  _id
-}) => {
-  const { user } = GlobalStore
+const Handler = ({_id}) => {
   return (
-    <div>
-      <h1>Page {_id}</h1>
-      <Link to="/">
-        <h1>
-          Go to home page
-        </h1>
-      </Link>
-      <p>
-        Also from here, lets get the user type: &nbsp;
-        { user.type }
-      </p>
-      <button onClick={() => user.SetType(_id)}>
-        Update!
-      </button>
-    </div>
+    <Page>
+      <Header title={`Page ${_id}`} />
+      <Container>
+        <p>
+          This have dynamic props
+        </p>
+        <Link to="/">
+          <button>
+            Go to home page
+          </button>
+        </Link>
+      </Container>
+    </Page>
   )
 }
 
-export default view(Handler)
+export default View(Handler)

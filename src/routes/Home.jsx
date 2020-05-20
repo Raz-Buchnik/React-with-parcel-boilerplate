@@ -1,30 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { view } from 'react-easy-state'
-import GlobalStore from '../app/store'
-
-const UpdateUserWrapper = SetType => {
-  const date = + new Date()
-  SetType(date)
-}
+import { view as View } from 'react-easy-state'
+import { Page, Header, Container } from '../core'
+import { user } from '../stores'
 
 const Handler = () => {
-  const { user } = GlobalStore
+  console.log(user.type)
   return (
-    <div>
-      <h1>Homepage</h1>
-      <h2>user.type: {user.type}</h2>
-      <button onClick={() => UpdateUserWrapper(user.SetType)}>
-        Update user type
-      </button>
-      <Link to="/about">
-        <h1>Go to about</h1>
-      </Link>
-      <Link to={`/page/my-page-id-here`}>
-        <h1>Go to some page</h1>
-      </Link>
-    </div>
+    <Page>
+      <Header title="Homepage" />
+      <Container>
+        <p>
+          This is the homepage
+        </p>
+        <Link to="/about">
+          <button>
+            Go to about
+          </button>
+        </Link>
+        <Link to="/page/some-id-here">
+          <button>
+            Go to page
+          </button>
+        </Link>
+      </Container>
+    </Page>
   )
 }
 
-export default view(Handler)
+export default View(Handler)

@@ -1,13 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { view as View } from 'react-easy-state'
+import { Page, Header, Container } from '../core'
 
-export default () => {
+const Handler = () => {
   return (
-    <div>
-      <h1>About</h1>
-      <Link to="/">
-        <h1>Go home</h1>
-      </Link>
-    </div>
+    <Page>
+      <Header title="About" />
+      <Container>
+        <p>
+          This is the About
+        </p>
+        <Link to="/">
+          <button>
+            Go to home page
+          </button>
+        </Link>
+      </Container>
+    </Page>
   )
 }
+
+export default View(Handler)
