@@ -7,7 +7,7 @@ const theme = Store({
     theme.theme = theme.theme == "theme-dark" ? "theme-light" : "theme-dark"
     theme.status = theme.status == "light" ? "dark" : "light"
   },
-  Black() {
+  DarkColor() {
     return theme.status == "light" ? 'black' : 'gray'
   }
 })
