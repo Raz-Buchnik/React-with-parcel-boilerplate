@@ -24,11 +24,8 @@ const theme = Store({
     theme.auto = true
     window.localStorage.removeItem("theme")
     const Handler = () => {
-      if (!theme.auto) {
-        return theme.StopAuto()
-      }
-      const current_hour = new Date().getHours()
-      theme.current = current_hour >= 20 ? "theme-dark" : "theme-light"
+      if (!theme.auto) return theme.StopAuto()
+      theme.current = theme.IsNight() ? "theme-dark" : "theme-light"
     }
     Handler()
     theme.WatchDayAndNightInterval = setInterval(Handler, 1000)
@@ -37,6 +34,13 @@ const theme = Store({
     theme.auto = false
     clearInterval(theme.WatchDayAndNightInterval)
     theme.watch_day_and_night_already_inited = false
+  },
+  IsNight() {
+    const d = new Date()
+    const hour = d.getHours()
+    const month = d.getMonth()+1
+    const min_hour = month>=11 || month<=3 ? 16 : 20
+    return hour>=min_hour
   }
 })
 
