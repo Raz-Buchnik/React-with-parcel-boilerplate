@@ -20,6 +20,12 @@ const Handler = ({_id}) => {
           Go to homepage
         </Button>
       </Block>
+      <Block>
+        Some icons: &nbsp;
+        <i className="f7-icons color-green">phone_arrow_up_right</i>&nbsp;&nbsp;
+        <i className="f7-icons color-green">house</i>&nbsp;&nbsp;
+        <i className="f7-icons color-green">person_crop_circle_fill_badge_plus</i>
+      </Block>
     </Page>
   )
 }
