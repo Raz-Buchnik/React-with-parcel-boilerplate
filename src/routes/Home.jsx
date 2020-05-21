@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { view as State } from 'react-easy-state'
 import { Page, Navbar, Block, Button, List, ListItem } from 'framework7-react'
-import { user, theme, language } from '/stores'
+import { user, theme, language, global } from '/stores'
 
 const Handler = () => {
   return (
