@@ -46,13 +46,13 @@ const Handler = () => {
       </Block>
       <Block>
         <List>
-            <ListItem onClick={() => language.SetCurrent('he-IL')} link>
-              Set Hebrew
-            </ListItem>
-            <ListItem onClick={() => language.SetCurrent('en-US')} link>
-              Set English
-            </ListItem>
-          </List>
+          <ListItem onClick={() => language.SetCurrent('he-IL')} link>
+            Set Hebrew
+          </ListItem>
+          <ListItem onClick={() => language.SetCurrent('en-US')} link>
+            Set English
+          </ListItem>
+        </List>
       </Block>
     </Page>
   )
