@@ -39,8 +39,10 @@ const theme = Store({
     const d = new Date()
     const hour = d.getHours()
     const month = d.getMonth()+1
-    const min_hour = month>=11 || month<=3 ? 16 : 20
-    return hour>=min_hour
+    const winter = month>=11 || month<=3
+    const night_hour = winter ? 16 : 20
+    const light_hour = winter ? 8 : 6
+    return hour>=night_hour || hour<light_hour
   }
 })
 
