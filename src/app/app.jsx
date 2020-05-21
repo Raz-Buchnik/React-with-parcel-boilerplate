@@ -1,5 +1,5 @@
 import React from 'react'
-import { App, View } from 'framework7-react'
+import { App, View, f7ready } from 'framework7-react'
 import AppParams from '/app/params'
 import AppRouter from '/app/router'
 import { view as State } from 'react-easy-state'
@@ -10,7 +10,7 @@ class AppMain extends React.Component {
     super()
   }
   componentDidMount() {
-    this.$f7ready(f7App => {
+    f7ready(f7App => {
       global.app = f7App
       global.app.dialog.alert('Hello World')
     })
