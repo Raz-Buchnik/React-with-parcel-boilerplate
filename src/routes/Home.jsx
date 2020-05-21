@@ -21,9 +21,8 @@ const Handler = () => {
         </Button>
       </Block>
       <Block>
-        <Button fill color={theme.theme == "theme-light" ? 'black' : 'gray'} 
-        onClick={() => theme.ToggleTheme()}>
-          { theme.theme == "theme-light" ? 'Go dark' : 'Go light' }
+        <Button fill color={theme.Black()} onClick={() => theme.ToggleTheme()}>
+          { theme.status == "light" ? 'Go dark' : 'Go light' }
         </Button>
       </Block>
     </Page>
