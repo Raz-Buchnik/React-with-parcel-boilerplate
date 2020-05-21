@@ -1,5 +1,5 @@
 import React from 'react'
-import { view as View } from 'react-easy-state'
+import { view as State } from 'react-easy-state'
 import { Page, Navbar, Block, Button } from 'framework7-react'
 import { user } from '/stores'
 
@@ -19,4 +19,4 @@ const Handler = () => {
   )
 }
 
-export default View(Handler)
+export default State(Handler)

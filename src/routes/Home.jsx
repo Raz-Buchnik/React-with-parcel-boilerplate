@@ -1,7 +1,7 @@
 import React from 'react'
-import { view as View } from 'react-easy-state'
+import { view as State } from 'react-easy-state'
 import { Page, Navbar, Block, Button } from 'framework7-react'
-import { user } from '/stores'
+import { user, theme } from '/stores'
 
 const Handler = () => {
   return (
@@ -20,8 +20,13 @@ const Handler = () => {
           Go to page
         </Button>
       </Block>
+      <Block>
+        <Button fill color="purple" onClick={() => theme.ToggleTheme()}>
+          { theme.theme == "theme-light" ? 'Go dark' : 'Go light' }
+        </Button>
+      </Block>
     </Page>
   )
 }
 
-export default View(Handler)
+export default State(Handler)
