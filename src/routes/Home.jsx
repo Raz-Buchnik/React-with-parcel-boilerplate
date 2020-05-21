@@ -1,7 +1,7 @@
 import React from 'react'
 import { view as State } from 'react-easy-state'
 import { Page, Navbar, Block, Button, List, ListItem } from 'framework7-react'
-import { user, theme } from '/stores'
+import { user, theme, language } from '/stores'
 
 const Handler = () => {
   return (
@@ -19,6 +19,9 @@ const Handler = () => {
         <Button fill href="/page/some-id-here">
           Go to page
         </Button>
+      </Block>
+      <Block>
+        { language.t['Test'] }
       </Block>
       <Block>
         <List>
