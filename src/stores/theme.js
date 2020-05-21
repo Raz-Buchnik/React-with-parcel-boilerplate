@@ -1,29 +1,31 @@
 import { store as Store } from 'react-easy-state'
 
+const current = window.localStorage.getItem("theme")
+
 const theme = Store({
   auto: true,
-  current: "theme-light",
+  current,
   SetDark() {
     theme.current = "theme-dark"
-    theme.StopWatchDayAndNight()
+    theme.StopAuto()
+    window.localStorage.setItem("theme", "theme-dark")
   },
   SetLight() {
     theme.current = "theme-light"
-    theme.StopWatchDayAndNight()
-  },
-  SetAuto() {
-    theme.WatchDayAndNight()
+    theme.StopAuto()
+    window.localStorage.setItem("theme", "theme-light")
   },
   GetDarkColor() {
     return theme.current == "theme-light" ? 'black' : 'gray'
   },
-  WatchDayAndNight() {
+  SetAuto() {
     if (theme.watch_day_and_night_already_inited) return
     theme.watch_day_and_night_already_inited = true 
     theme.auto = true
+    window.localStorage.removeItem("theme")
     const Handler = () => {
       if (!theme.auto) {
-        return theme.StopWatchDayAndNight()
+        return theme.StopAuto()
       }
       const current_hour = new Date().getHours()
       theme.current = current_hour >= 20 ? "theme-dark" : "theme-light"
@@ -31,13 +33,15 @@ const theme = Store({
     Handler()
     theme.WatchDayAndNightInterval = setInterval(Handler, 1000)
   },
-  StopWatchDayAndNight() {
+  StopAuto() {
     theme.auto = false
     clearInterval(theme.WatchDayAndNightInterval)
     theme.watch_day_and_night_already_inited = false
   }
 })
 
-theme.WatchDayAndNight()
+if (!current) {
+  theme.SetAuto()
+}
 
 export default theme
