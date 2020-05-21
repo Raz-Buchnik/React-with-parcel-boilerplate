@@ -6,8 +6,9 @@
   "scripts": {
     "start": "rm -rf ./build/www && NODE_ENV=development parcel ./src/index.html --port 8083 --out-dir build/www",
     "build": "rm -rf ./build/www && NODE_ENV=production parcel build ./src/index.html --out-dir build/www",
-    "build-dev": "rm -rf ./build/www && NODE_ENV=development parcel build ./src/index.html --out-dir build/output",
-    "build-stage": "rm -rf ./build/www && NODE_ENV=staging parcel build ./src/index.html --out-dir build/output"
+    "build-dev": "rm -rf ./build/www && NODE_ENV=development parcel build ./src/index.html --out-dir build/www",
+    "build-stage": "rm -rf ./build/www && NODE_ENV=staging parcel build ./src/index.html --out-dir build/www --no-source-maps",
+    "build-prod": "rm -rf ./build/www && NODE_ENV=staging parcel build ./src/index.html --out-dir build/www --no-source-maps"
   },
   "keywords": [
     "React with Parcel Boilerplate"
