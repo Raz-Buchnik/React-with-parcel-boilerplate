@@ -28,9 +28,7 @@ const language = Store({
     }
     await import('/colors.css')
     document.getElementsByTagName("html")[0].dir = language.t.dir
-    if (typeof cb !== "undefined") {
-      return cb()
-    }
+    return typeof cb !== "undefined" ? cb() : location.reload()
   }
 })
 
