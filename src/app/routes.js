@@ -1,17 +1,17 @@
-import React from 'react'
+import { lazy } from 'react'
 
 const routes = [
   {
     path: "/about",
-    MyComponent: React.lazy(() => import('/routes/About'))
+    MyComponent: lazy(() => import('/routes/About'))
   },
   {
     path: "/page/:_id",
-    MyComponent: React.lazy(() => import('/routes/Page'))
+    MyComponent: lazy(() => import('/routes/Page'))
   },
   {
     path: "/",
-    MyComponent: React.lazy(() => import('/routes/Home'))
+    MyComponent: lazy(() => import('/routes/Home'))
   }
 ]
 
