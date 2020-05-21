@@ -1,9 +1,8 @@
-export default language => {
+export default (language) => {
   return {
     name: "Taxi4you",
     id: "taxi4you.co.il",
     statusbar: {
-      // overlay: self.$device.cordova && self.$device.ios || 'auto',
       iosOverlaysWebView: true,
       androidOverlaysWebView: false,
       androidTextColor: "white",
