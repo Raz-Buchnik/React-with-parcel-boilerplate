@@ -15,7 +15,6 @@
   "author": "Raz Buchnik",
   "license": "ISC",
   "dependencies": {
-    "app": "^0.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-easy-state": "^6.1.3",
