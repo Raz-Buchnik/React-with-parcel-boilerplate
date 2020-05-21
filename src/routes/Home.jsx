@@ -24,19 +24,19 @@ const Handler = () => {
         <List>
           {
             theme.current == "theme-light" && (
-              <ListItem onClick={() => theme.SetDark()}>
+              <ListItem onClick={() => theme.SetDark()} link>
                 Go dark
               </ListItem>
             )
           }
           {
             theme.current == "theme-dark" && (
-              <ListItem onClick={() => theme.SetLight()}>
+              <ListItem onClick={() => theme.SetLight()} link>
                 Go light
               </ListItem>
             )
           }
-          <ListItem onClick={() => theme.SetAuto()}>
+          <ListItem onClick={() => theme.SetAuto()} link>
             Auto detect
           </ListItem>
         </List>
