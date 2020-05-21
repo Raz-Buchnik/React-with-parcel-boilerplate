@@ -21,9 +21,6 @@ const Handler = () => {
         </Button>
       </Block>
       <Block>
-        { language.t['Test'] }
-      </Block>
-      <Block>
         <List>
           {
             theme.current == "theme-light" && (
