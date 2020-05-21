@@ -11,7 +11,7 @@ const Handler = ({_id}) => {
         Page with props, user.type: { user.type }
       </Block>
       <Block>
-        <Button fill color="blue" onClick={() => user.SetType(_id)}>
+        <Button fill color="blue" onClick={() => user.SetType(+ new Date())}>
           Update user type
         </Button>
       </Block>
