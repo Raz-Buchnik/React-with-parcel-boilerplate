@@ -1,22 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { view as View } from 'react-easy-state'
-import { Page, Header, Container } from '/core'
+import { Page, Navbar, Block, Button } from 'framework7-react'
+import { user } from '/stores'
 
 const Handler = ({_id}) => {
   return (
     <Page>
-      <Header title={`Page ${_id}`} />
-      <Container>
-        <p>
-          This have dynamic props
-        </p>
-        <Link to="/">
-          <button>
-            Go to home page
-          </button>
-        </Link>
-      </Container>
+      <Navbar title={`Page with id: ${_id}`} />
+      <Block>
+        Page with props, user.type: { user.type }
+      </Block>
+      <Block>
+        <Button fill color="blue" onClick={() => user.SetType(_id)}>
+          Update user type
+        </Button>
+      </Block>
+      <Block>
+        <Button fill color="red" href="/">
+          Go to homepage
+        </Button>
+      </Block>
     </Page>
   )
 }

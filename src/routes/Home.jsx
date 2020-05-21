@@ -1,29 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { view as View } from 'react-easy-state'
-import { Page, Header, Container } from '/core'
+import { Page, Navbar, Block, Button } from 'framework7-react'
 import { user } from '/stores'
 
 const Handler = () => {
-  console.log(user.type)
   return (
     <Page>
-      <Header title="Homepage" />
-      <Container>
-        <p>
-          This is the homepage
-        </p>
-        <Link to="/about">
-          <button>
-            Go to about
-          </button>
-        </Link>
-        <Link to="/page/some-id-here">
-          <button>
-            Go to page
-          </button>
-        </Link>
-      </Container>
+      <Navbar title="Homepage" />
+      <Block>
+        Home page, user.type: { user.type }
+      </Block>
+      <Block>
+        <Button fill href="/about">
+          Go to about
+        </Button>
+      </Block>
+      <Block>
+        <Button fill href="/page/some-id-here">
+          Go to page
+        </Button>
+      </Block>
     </Page>
   )
 }
