@@ -10,7 +10,7 @@ const AppMain = () => {
   useEffect(() => {
     f7ready(f7App => {
       global.app = f7App
-      user.FetchData()
+      user.Init()
     })
   }, [])
 
@@ -20,7 +20,7 @@ const AppMain = () => {
       routes={AppRouter} 
       className={`${theme.current}`}>
         { 
-          (global.app && user.data) 
+          (global.app && user.inited) 
             ? <View main pushState />
             : <Preloader />
         }
