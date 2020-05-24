@@ -7,14 +7,21 @@ const user = Store({
   inited: false,
   data: {},
   async Init() {
-    await user.GetFreshData()
+    try {
+      await user.GetFreshData()
+      // move to home page
+    } catch (error) {
+      // move to login page
+    }
     user.inited = true
   },
   GetFreshData() {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
+        // if user, resolve
         user.data = "Hello World"
         return resolve()
+        // else, reject
       })
     })
   }
