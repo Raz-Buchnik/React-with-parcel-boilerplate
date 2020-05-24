@@ -8,11 +8,11 @@ const Handler = ({_id}) => {
     <Page>
       <Navbar title={`Page with id: ${_id}`} />
       <Block>
-        Page with props, user.type: { user.type }
+        Page with props, user.data: { user.data }
       </Block>
       <Block>
-        <Button fill color="blue" onClick={() => user.type = + new Date() }>
-          Update user type
+        <Button fill color="blue" onClick={() => user.data = + new Date() }>
+          Update user data
         </Button>
       </Block>
       <Block>

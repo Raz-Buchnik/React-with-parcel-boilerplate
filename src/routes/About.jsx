@@ -8,7 +8,7 @@ const Handler = () => {
     <Page>
       <Navbar title="About" />
       <Block>
-        About page, user.type: { user.type }
+        About page, user.data: { user.data }
       </Block>
       <Block>
         <Button fill color="green" href="/">

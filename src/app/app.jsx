@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { App, View, f7ready } from 'framework7-react'
+import React, { useEffect } from 'react'
+import { App, View, f7ready, Preloader } from 'framework7-react'
 import AppParams from '/app/params'
 import AppRouter from '/app/router'
 import { view as State } from 'react-easy-state'
-import { theme, language, global } from '/stores'
-
-const InitF7Effect = () => {
-  f7ready(f7App => {
-    global.app = f7App
-    global.app.dialog.alert("Hello World")
-  })
-}
+import { theme, language, global, user } from '/stores'
 
 const AppMain = () => {
-  useEffect(InitF7Effect, [])
+
+  useEffect(() => {
+    f7ready(f7App => {
+      global.app = f7App
+      user.FetchData()
+    })
+  }, [])
 
   return (
     <App 
@@ -21,7 +20,9 @@ const AppMain = () => {
       routes={AppRouter} 
       className={`${theme.current}`}>
         { 
-          global.app && <View main pushState url="/" />
+          (global.app && user.data) 
+            ? <View main pushState />
+            : <Preloader />
         }
     </App>
   )
