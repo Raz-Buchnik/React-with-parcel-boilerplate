@@ -39,7 +39,7 @@ const Handler = () => {
           <ListItem onClick={() => theme.SetAuto()} link>
             Auto detect
           </ListItem>
-        </List>
+        </List> 
       </Block>
       <Block>
         <List>

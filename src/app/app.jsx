@@ -16,10 +16,13 @@ const AppMain = () => {
   useEffect(InitF7Effect, [])
 
   return (
-    <App params={AppParams(language)} routes={AppRouter} className={`${theme.current}`}>
-      { 
-        global.app && <View main pushState url="/" />
-      }
+    <App 
+      params={AppParams(language)} 
+      routes={AppRouter} 
+      className={`${theme.current}`}>
+        { 
+          global.app && <View main pushState url="/" />
+        }
     </App>
   )
 }
